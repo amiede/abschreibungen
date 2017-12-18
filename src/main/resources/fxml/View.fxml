@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="650.0" maxWidth="480.0" minHeight="650.0" minWidth="480.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.htwsaar.stl.winf.abschreibungen.view.fx.controller.Controller">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="390.0" minHeight="390.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="110.0" minHeight="110.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="100.0" minHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <HBox alignment="TOP_RIGHT" spacing="20.0">
+                    <children>
+                        <!--text="%label-jahr" --> 
+                        <Label fx:id="lblJahr" alignment="CENTER" contentDisplay="CENTER" minHeight="25.0" minWidth="100.0" text="Jahr" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin></Label>
+                        <Label fx:id="lblAfaSatz" alignment="CENTER" contentDisplay="CENTER" minHeight="25.0" minWidth="100.0" text="AfA-Satz (%)">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Label>
+                        <Label fx:id="lblAfaBetrag" alignment="CENTER" contentDisplay="CENTER" minHeight="25.0" minWidth="100.0" text="AfA-Betrag (EUR)" />
+                        <Label fx:id="lblZeitwert" alignment="CENTER" contentDisplay="CENTER" minHeight="25.0" minWidth="100.0" text="Zeitwert (EUR)">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+                </HBox>
+                <HBox maxHeight="350.0">
+                    <children>
+                        <ListView fx:id="lsvJahr" maxHeight="350.0" maxWidth="120.0" minHeight="350.0" minWidth="120.0" nodeOrientation="RIGHT_TO_LEFT" />
+                        <ListView fx:id="lsvAfaSatz" maxHeight="350.0" maxWidth="120.0" minHeight="350.0" minWidth="120.0" nodeOrientation="RIGHT_TO_LEFT" />
+                        <ListView fx:id="lsvAfaBetrag" maxHeight="350.0" maxWidth="120.0" minHeight="350.0" minWidth="120.0" nodeOrientation="RIGHT_TO_LEFT">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </ListView>
+                        <ListView fx:id="lsvZeitwert" maxHeight="350.0" maxWidth="120.0" minHeight="350.0" minWidth="120.0" nodeOrientation="RIGHT_TO_LEFT" />
+                    </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+                </HBox>
+            <Separator prefWidth="200.0" />
+            </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+        </VBox>
+        <GridPane alignment="CENTER_RIGHT" maxWidth="480.0" minWidth="480.0" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label fx:id="lblAnschaffungspreis" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                    <children>
+                        <Label fx:id="lblJahre" />
+                    </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+                </VBox>
+                <TextField fx:id="txtAnschaffungspreis" alignment="CENTER_RIGHT" maxWidth="150.0" minWidth="150.0" prefWidth="0.0" text="10000" GridPane.columnIndex="1" />
+                <TextField fx:id="txtJahre" alignment="CENTER_RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+            <GridPane.margin>
+                <Insets top="15.0" />
+            </GridPane.margin>
+        </GridPane>
+        <VBox prefHeight="200.0" prefWidth="480.0" GridPane.rowIndex="2">
+            <children>
+            <Separator prefWidth="200.0" />
+                <Label fx:id="lblAbschreibungsmethoden" minHeight="20.0" minWidth="150.0">
+                    <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox alignment="CENTER_LEFT" minHeight="70.0" spacing="60.0">
+                    <children>
+                        <RadioButton fx:id="rabLinear" alignment="TOP_LEFT" contentDisplay="CENTER" ellipsisString="" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" selected="true">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="tgAbschribungsgroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rabGeoDeggresiv" alignment="TOP_LEFT" contentDisplay="CENTER" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" toggleGroup="$tgAbschribungsgroup" />
+                        <RadioButton fx:id="rabGeoDegLinear" alignment="TOP_LEFT" contentDisplay="CENTER" minHeight="50.0" minWidth="120.0" mnemonicParsing="false" toggleGroup="$tgAbschribungsgroup" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+                </HBox>
+            </children>
+            <GridPane.margin>
+                <Insets top="5.0" />
+            </GridPane.margin>
+        </VBox>
+        <HBox maxHeight="20.0" maxWidth="480.0" minHeight="20.0" minWidth="480.0" prefWidth="0.0" spacing="229.0" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <children>
+                <Button fx:id="btnReset" alignment="CENTER" contentDisplay="BOTTOM" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+                <Button fx:id="btnBerechnen" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#berechnen" text="Berechnen" />
+            </children>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </HBox>
+    </children>
+</GridPane>

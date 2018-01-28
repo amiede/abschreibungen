@@ -9,17 +9,6 @@
 	<packaging>jar</packaging>
 	<description>Java FX Gui fuer das Abschreibungstool</description>
 	<name>abschreibung-1.0-SNAPSHOT</name>
-	<!-- abhaengigkeit -->
-        <!-- 
-	<dependencies>
-		<dependency>
-			<groupId>abschreibungen</groupId>
-			<artifactId>abschreibungen</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
-        -->
-	<!-- Plugin Verwaltung -->
 	<build>
 		<plugins>
 			<!-- maven Compiler Plugin -->
@@ -32,45 +21,47 @@
 					<showDeprecation>false</showDeprecation>
 				</configuration>
 			</plugin>
-			<!-- Java Fx Maven plugin -->			
+			<!-- Plugin ubergibt parameter beim start -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${maven.exec.plugin.version}</version>
+				<configuration>					
+					<mainClass>${java.main.class}</mainClass>
+				</configuration>
+			</plugin>
+			<!-- Plugin schreibt Startmethode in die ManifestDatei -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				  <version>${maven.jar.plugin.version}</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${java.main.class}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- Java Fx Maven plugin -->
 			<plugin>
 				<groupId>com.zenjava</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
-				<version>8.8.3</version>
+				<version>${javafx.maven.plugin}</version>
 				<configuration>
-					<mainClass>${mainClass}</mainClass>
+					<mainClass>${java.main.class}</mainClass>
 				</configuration>
 			</plugin>
-                        <!-- 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<transformers>
-								<transformer
-									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>org.sonatype.haven.HavenCli</mainClass>
-								</transformer>
-							</transformers>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-                        -->
 		</plugins>
 	</build>
 	<!-- Properties -->
 	<properties>
-		<mainClass>de.htwsaar.stl.winf.abschreibungen.view.fx.main.MainApp</mainClass>
+		<java.main.class>de.htwsaar.stl.winf.abschreibungen.view.fx.main.MainApp</java.main.class>
 		<maven.version>3.7.0</maven.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+		<maven.exec.plugin.version>1.6.0</maven.exec.plugin.version>
+		<javafx.maven.plugin>8.8.3</javafx.maven.plugin>
 	</properties>
 </project>

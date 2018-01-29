@@ -6,7 +6,7 @@
 # @Snapshort	1.0.0
 # 
 # Description:
-#	starten die javaFx view 
+#	startet die javaFx view 
 
 # clean - Loeschen aller erzeugten Artefakte und des target-Verzeichnisses
 # jfx:run - ist ein plugin das Build und Erzeugung der Ergebnis-Artefakte

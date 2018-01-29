@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# @Name		 
+# @Author	Oliver Avarello
+# @Version	29.01.2018
+# @Snapshort	1.0.0
+# 
+# Description:
+#	Gibt das programm auf der konsole aus
+
+# clean - Loeschen aller erzeugten Artefakte und des target-Verzeichnisses
+# package - Build und Erzeugung der Ergebnis-Artefakte
+
+mvn clean package
+
+# exec:java - Startet die Konsolenausgabe
+
+mvn exec:java

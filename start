@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# @Name		 
+# @Author	Oliver Avarello
+# @Version	29.01.2018
+# @Snapshort	1.0.0
+# 
+# Description:
+#	Gibt das programm auf der konsole aus
+
+# clean - Loeschen aller erzeugten Artefakte und des target-Verzeichnisses
+# package - Build und Erzeugung der Ergebnis-Artefakte
+
+source ./script/shellConfig/start-console
+source ./script/shellConfig/start-javafx
+
+eingabe(){
+	read -p "Auswahl: " AUSWAHL;
+}
+
+text_auf_console() {
+
+echo "Wählen sie aus:"
+echo
+echo "1 - Konsolen ausgabe"
+echo "2 - JavaFX GUI starten"
+echo "0 - Beenden"
+echo
+eingabe
+echo
+
+auswahl
+
+}
+
+auswahl() {
+
+# Ist die Auswahl Konsole
+if [ $AUSWAHL -eq 1 ];
+then
+	isKonsoleGewaelt
+# Ist die Auswahl das User Interface
+elif [ $AUSWAHL -eq 2  ];
+then
+	isUserInterfacegewaelt
+# Wurde beenden ausgewählt
+elif [ $AUSWAHL -eq 0 ];
+then
+	isExit
+# Eingabe nicht korrekt
+else 
+	isOther
+fi
+}
+
+isKonsoleGewaelt(){
+	echo "sie haben sich für die KonsolenAusgabe entschieden"
+
+	maven_console_ausgeben
+}
+
+isUserInterfacegewaelt(){
+	echo "sie haben sich für die UserInterface entschieden"
+
+	maven_javafx_ausgeben
+}
+isExit(){
+	echo "Augabe wird Beendet"	
+	ending
+}
+
+isOther(){
+	echo "ihre eingabe war falsch"
+	ending
+}
+
+ending(){
+	exit 0
+}
+
+
+text_auf_console
+

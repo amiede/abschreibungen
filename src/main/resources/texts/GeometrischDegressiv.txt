@@ -1,0 +1,14 @@
+Geometrisch-degressive Abschreibung:
+
+-Jedes Jahr ein fester Prozentsatz vom Restwert
+-ab acht Jahren Nutzungsdauer im Einsatz
+-Nullwert kann nicht erreicht werden
+
+
+
+Formeln:
+AfA-Satz: 
+Doppelter linearer AfA-Satz, aber HÖCHSTENS 20%
+
+AfA-Satz= fix(s. Regeln oben)
+AfA-Betrag=(AfA-Satz x Restwert Vorperiode)/100

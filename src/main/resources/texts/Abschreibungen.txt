@@ -1,0 +1,9 @@
+Abschreibungen
+
+Grundlage: Anlagegüter verlieren an Wert. Ausgleich dieser Wertminderung durch Abschreibungen.
+
+Unterscheidung zwischen:
+-Abnutzbare vs nicht abnutzbare Anlagegüter
+-Planmäßige vs. Außerplanmäßige Abschreibungen
+-Angaben wie Nutzungsdauer steuerrechtlich festgelegt
+-> "Absetzung für Abnutzung" (AfA) in AfA Tabellen

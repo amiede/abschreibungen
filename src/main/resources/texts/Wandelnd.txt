@@ -1,0 +1,9 @@
+Wechsel von geometrisch-degressiv zu linear:
+
+Vorteil: 
+-Hohe AfA-Beträge am Anfang
+-Im Gegensatz zu der puren geometrisch-degressiven Abschreibung wird der Nullwert durch den Wechsel auf linear erreicht
+-es gibt ein Wechseljahr, nach dem gewechselt werden darf-> Jahr, in dem der geometrisch-degressive Abschreibungsbetrag gleich hoch oder geringer als der aktuelle lineare Abschreibungsbetrag 
+
+Formel:
+Wechseljahr=(Nutzungsdauer+1)-(100%)/(degressive AfA-Satz)

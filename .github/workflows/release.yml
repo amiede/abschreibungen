@@ -1,0 +1,69 @@
+# This workflow will build the server with Maven, and cache/restore any dependencies to improve the workflow execution time.
+# After that, the created binary will be up uploaded to the release that triggered the workflow.
+
+name: Upload release binary
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  upload-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn clean package -ntp -Djar-target-platform=linux
+      - name: Upload release binary
+        uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["./target/*runner.jar"]'
+
+  upload-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn clean package -ntp -Djar-target-platform=windows
+      - name: Upload release binary
+        uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["./target/*runner.jar"]'
+
+  upload-macos:
+
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn clean package -ntp -Djar-target-platform=macos
+      - name: Upload release binary
+        uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["./target/*runner.jar"]'

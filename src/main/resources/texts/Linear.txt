@@ -1,0 +1,9 @@
+Linear:
+
+
+-Abschreibung mit konstantem Prozentsatz der Anschaffungskosten
+-Aufteilung der Anschaffungskosten auf die einzelnen Nutzungsjahre
+
+Formeln:
+-AfA-Satz=100%/Nutzungsdauer
+-AfA-Betrag=Anschaffungskosten/Nutzungsdauer
